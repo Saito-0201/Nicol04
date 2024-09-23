@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+
+    <title>Te amo :)</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <img src="img/broma.jpg" alt="Es broma pero si quieres no es broma" class="tom">
+    <div class="centro">
+        <h3>¿Estás dispuesta a que esto sea un nuevo comienzo?</h3>
+        <h4>Porque para mí siempre has sido tú</h4>
+        <a href="#" id="si">Sí</a>
+        <a href="#" id="obvioSi">Obvio Sí</a>
+    </div>
+
+    <div id="scratch"></div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="wScratchPad.min.js"></script>
+
+    <script>
+        $('#scratch').wScratchPad({
+            size        : 100,          // The size of the brush/scratch.
+            bg          : 'transparent',  // Background (image path or hex color).
+            fg          : '#000',  // Foreground (image path or hex color).
+            realtime    : true,       // Calculates percentage in realitime.
+        });
+    </script>
+
+    <script src="sweetalert2@10.js"></script>
+    <script>
+
+         $("#si").on("click", function() {
+            alerta("¿Estás segura?");
+         });
+
+         $("#obvioSi").on("click", function() {
+            alerta("¿En serio es obvio?");
+         });
+
+         function alerta(texto) {
+            Swal.fire({
+            title: texto,
+            confirmButtonText: 'Sí',
+            showCancelButton: true,
+            cancelButtonText: "No",
+            cancelButtonColor: '#d33',
+            width: 600,
+            padding: '3em',
+            background: '#fff url(./img/trees.png)',
+            backdrop: `
+                rgba(0,0,123,0.4)
+                url("./img/nyan-cat.gif")
+                left top
+                no-repeat
+            `
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $(location).attr('href','main.html');
+                }
+            });
+        }
+    </script> 
+
+</body>
+</html>

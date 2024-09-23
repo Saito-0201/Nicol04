@@ -1,0 +1,21 @@
+body {
+    background: rgb(185, 185, 185);
+}
+
+.container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.container img, .container video {
+    width: 90%;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.container video {
+    width: 80%;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
